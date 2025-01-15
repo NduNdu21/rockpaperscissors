@@ -11,9 +11,11 @@ function getComputerChoice() {
         return "scissors";
     }
 }
+console.log(getComputerChoice())
 
 function getHumanChoice() {
     let choice = prompt("Let's play rock, paper, scissors!\nChoose your option by typing \"rock\", \"paper\" or \"scissors\" in lowercase").toLowerCase()
 
     return choice
 }
+console.log(getHumanChoice())
