@@ -23,6 +23,9 @@ console.log(getHumanChoice())
 let humanScore = 0
 let computerScore = 0
 
+const humanChoice = getHumanChoice()
+const computerChoice = getComputerChoice()
+
 function playRound(humanChoice, computerChoice) {
     while (humanChoice !== "quit") {
         switch (humanChoice) {
