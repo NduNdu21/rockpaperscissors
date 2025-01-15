@@ -24,41 +24,47 @@ function playGame() {
     const humanChoice = getHumanChoice()
     const computerChoice = getComputerChoice()
     
-    function playRound(humanChoice, computerChoice) {
-        switch (humanChoice) {
+    function playRound(humanCho, computerCho) {
+        switch (humanCho) {
             case "rock":
-                if (computerChoice === "rock") {
+                if (computerCho === "rock") {
                     return "Draw, try again!"
-                } else if (computerChoice === "paper") {
-                    computerChoice++
+                } else if (computerCho === "paper") {
+                    computerScore++
                     return "You lose! Paper beats Rock"
-                } else if (computerChoice === "scissors") {
+                } else if (computerCho === "scissors") {
                     humanScore++
                     return "You win! Rock beats Scissors"
                 }
             break;
             case "paper":
-                if (computerChoice === "rock") {
+                if (computerCho === "rock") {
                     humanScore++
                     return "You win! Paper beats Rock"
-                } else if (computerChoice === "paper") {
+                } else if (computerCho === "paper") {
                     return "Draw, try again!"
-                } else if (computerChoice === "scissors") {
+                } else if (computerCho === "scissors") {
                     computerScore++
                     return "You lose! Scissors beats Paper"
                 }
             break;
             case "scissors":
-                if (computerChoice === "rock") {
+                if (computerCho === "rock") {
                     computerScore++
                     return "You lose! Rock beats Scissors"
-                } else if (computerChoice === "paper") {
+                } else if (computerCho === "paper") {
                     humanScore++
                     return "You win! Scissors beats Paper"
-                } else if (computerChoice === "scissors") {
+                } else if (computerCho === "scissors") {
                     return "Draw, try again!"
                 }
             break;
         }
     }
+
+    for (let i = 1; i <= 5; i++) {
+        playRound(humanChoice, computerChoice)
+    }
+
+    return "You won " + humanScore + " times"
 }
