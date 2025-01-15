@@ -21,8 +21,8 @@ function playGame() {
     let humanScore = 0
     let computerScore = 0
     
-    const humanChoice = getHumanChoice()
-    const computerChoice = getComputerChoice()
+    let humanChoice = getHumanChoice()
+    let computerChoice = getComputerChoice()
     
     function playRound(humanCho, computerCho) {
         switch (humanCho) {
@@ -65,8 +65,10 @@ function playGame() {
     for (let i = 1; i <= 5; i++) {
         humanChoice = getHumanChoice()
         computerChoice = getComputerChoice()
-        playRound(humanChoice, computerChoice)
+        console.log(playRound(humanChoice, computerChoice))
     }
 
     return "You won " + humanScore + " times"
 }
+
+console.log(playGame())
