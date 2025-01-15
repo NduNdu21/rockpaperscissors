@@ -17,50 +17,48 @@ function getHumanChoice() {
     return choice
 }
 
-let humanScore = 0
-let computerScore = 0
-
-const humanChoice = getHumanChoice()
-const computerChoice = getComputerChoice()
-
-function playRound(humanChoice, computerChoice) {
-    switch (humanChoice) {
-        case "rock":
-            if (computerChoice === "rock") {
-                return "Draw, try again!"
-            } else if (computerChoice === "paper") {
-                computerChoice++
-                return "You lose! Paper beats Rock"
-            } else if (computerChoice === "scissors") {
-                humanScore++
-                return "You win! Rock beats Scissors"
-            }
-        break;
-        case "paper":
-            if (computerChoice === "rock") {
-                humanScore++
-                return "You win! Paper beats Rock"
-            } else if (computerChoice === "paper") {
-                return "Draw, try again!"
-            } else if (computerChoice === "scissors") {
-                computerScore++
-                return "You lose! Scissors beats Paper"
-            }
-        break;
-        case "scissors":
-            if (computerChoice === "rock") {
-                computerScore++
-                return "You lose! Rock beats Scissors"
-            } else if (computerChoice === "paper") {
-                humanScore++
-                return "You win! Scissors beats Paper"
-            } else if (computerChoice === "scissors") {
-                return "Draw, try again!"
-            }
-        break;
-    }
-}
-
 function playGame() {
-
+    let humanScore = 0
+    let computerScore = 0
+    
+    const humanChoice = getHumanChoice()
+    const computerChoice = getComputerChoice()
+    
+    function playRound(humanChoice, computerChoice) {
+        switch (humanChoice) {
+            case "rock":
+                if (computerChoice === "rock") {
+                    return "Draw, try again!"
+                } else if (computerChoice === "paper") {
+                    computerChoice++
+                    return "You lose! Paper beats Rock"
+                } else if (computerChoice === "scissors") {
+                    humanScore++
+                    return "You win! Rock beats Scissors"
+                }
+            break;
+            case "paper":
+                if (computerChoice === "rock") {
+                    humanScore++
+                    return "You win! Paper beats Rock"
+                } else if (computerChoice === "paper") {
+                    return "Draw, try again!"
+                } else if (computerChoice === "scissors") {
+                    computerScore++
+                    return "You lose! Scissors beats Paper"
+                }
+            break;
+            case "scissors":
+                if (computerChoice === "rock") {
+                    computerScore++
+                    return "You lose! Rock beats Scissors"
+                } else if (computerChoice === "paper") {
+                    humanScore++
+                    return "You win! Scissors beats Paper"
+                } else if (computerChoice === "scissors") {
+                    return "Draw, try again!"
+                }
+            break;
+        }
+    }
 }
