@@ -1,5 +1,4 @@
 //JavaScript code for rock paper scissors game
-console.log("Hello World!");
 
 function getComputerChoice() {
     let play = Math.floor(Math.random() * 3);
@@ -11,14 +10,12 @@ function getComputerChoice() {
         return "scissors";
     }
 }
-console.log(getComputerChoice())
 
 function getHumanChoice() {
     let choice = prompt("Let's play rock, paper, scissors!\nChoose your option by typing \"rock\", \"paper\" or \"scissors\" in lowercase\nType \"quit\" if you're done playing").toLowerCase()
 
     return choice
 }
-console.log(getHumanChoice())
 
 let humanScore = 0
 let computerScore = 0
@@ -64,4 +61,8 @@ function playRound(humanChoice, computerChoice) {
             break;
         }
     }
+}
+
+function playGame() {
+
 }
